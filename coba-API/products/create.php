@@ -6,40 +6,38 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
  
-// include database and object files
+// get database connection
 include_once '../config/database.php';
+ 
+// instantiate products object
 include_once '../objects/product.php';
  
-// get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
 $product = new Product($db);
  
-// get id of product to be edited
+// get posted data
 $data = json_decode(file_get_contents("php://input"));
  
-// set ID property of product to be edited
-$product->id = $data->id;
- 
-// set product property values
+// set products property values
 $product->name = $data->name;
 $product->price = $data->price;
 $product->description = $data->description;
 $product->category_id = $data->category_id;
+$product->created = date('Y-m-d H:i:s');
  
-// update the product
-if($product->update()){
+// create the products
+if($product->create()){
     echo '{';
-        echo '"message": "Product was updated."';
+        echo '"message": "Product was created."';
     echo '}';
 }
  
-// if unable to update the product, tell the user
+// if unable to create the products, tell the user
 else{
     echo '{';
-        echo '"message": "Unable to update product."';
+        echo '"message": "Unable to create products."';
     echo '}';
 }
 ?>

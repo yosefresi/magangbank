@@ -15,23 +15,23 @@ include_once '../objects/product.php';
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
+// prepare products object
 $product = new Product($db);
  
-// get product id
+// get products id
 $data = json_decode(file_get_contents("php://input"));
  
-// set product id to be deleted
+// set products id to be deleted
 $product->id = $data->id;
  
-// delete the product
+// delete the products
 if($product->delete()){
     echo '{';
         echo '"message": "Product was deleted."';
     echo '}';
 }
  
-// if unable to delete the product
+// if unable to delete the products
 else{
     echo '{';
         echo '"message": "Unable to delete object."';

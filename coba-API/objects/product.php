@@ -42,7 +42,7 @@ function read(){
     return $stmt;
 }
 
-// create product
+// create products
 function create(){
  
     // query to insert record
@@ -77,7 +77,7 @@ function create(){
      
 }
 
-// used when filling up the update product form
+// used when filling up the update products form
 function readOne(){
  
     // query to read single record
@@ -96,7 +96,7 @@ function readOne(){
     // prepare query statement
     $stmt = $this->conn->prepare( $query );
  
-    // bind id of product to be updated
+    // bind id of products to be updated
     $stmt->bindParam(1, $this->id);
  
     // execute query
@@ -113,7 +113,7 @@ function readOne(){
     $this->category_name = $row['category_name'];
 }
 
-// update the product
+// update the products
 function update(){
  
     // update query
@@ -152,7 +152,7 @@ function update(){
     return false;
 }
 
-// delete the product
+// delete the products
 function delete(){
  
     // delete query

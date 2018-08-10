@@ -13,13 +13,13 @@ include_once '../objects/product.php';
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
+// prepare products object
 $product = new Product($db);
  
-// set ID property of product to be edited
+// set ID property of products to be edited
 $product->id = isset($_GET['id']) ? $_GET['id'] : die();
  
-// read the details of product to be edited
+// read the details of products to be edited
 $product->readOne();
  
 // create array
