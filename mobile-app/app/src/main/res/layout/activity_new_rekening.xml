@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_rekening"
+        android:fontFamily="casual"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/new_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="@string/name"
+        android:fontFamily="casual"/>
+    
+    <EditText
+        android:id="@+id/new_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:hint="@string/email"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:id="@+id/new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pass"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:id="@+id/new_ktp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ktp"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:id="@+id/new_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/birthday"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:id="@+id/new_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:id="@+id/new_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/secCode"
+        android:fontFamily="casual" />
+
+    <Button
+        android:id="@+id/btnSubmitRekening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_button"
+        android:text="@string/submit"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
