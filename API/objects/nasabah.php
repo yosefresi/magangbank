@@ -5,7 +5,10 @@ class nasabah
     // database connection and table name
     private $conn;
     private $table_name = "nasabah";
+<<<<<<< HEAD
     private $table_name2 = "rekening";
+=======
+>>>>>>> 4d294244982e535754c875e8d43d65ca3a0b7341
 
     // object properties
     public $id_nasabah;
