@@ -3,7 +3,7 @@ class nasabah{
 
     // database connection and table name
     private $conn;
-    private $table_name = "products";
+    private $table_name = "nasabah";
 
     // object properties
     public $nsb_id;
