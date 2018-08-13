@@ -21,7 +21,7 @@ $nasabah = new nasabah($db);
 $data = json_decode(file_get_contents("php://input"));
 
 // set products property values
-$nasabah->nsb_id = $data->nsb_id;
+$nasabah->id_nasabah = $data->id_nasabah;
 $nasabah->email = $data->email;
 // creating username, using first name and random number
 $nasabah->username = substr($this->nama_lengkap,0,strpos($this->nama_lengkap," ")) + rand(001,100);
@@ -33,17 +33,17 @@ $nasabah->alamat = $data->alamat;
 $nasabah->kode_rahasia = $data->kode_rahasia;
 $nasabah->created = date('Y-m-d H:i:s');
 
-// create the products
+// create new nasabah
 if($nasabah->create()){
     echo '{';
-    echo '"message": "Pendaftaran products berhasil."';
+    echo '"message": "Pendaftaran nasabah berhasil."';
     echo '}';
 }
 
-// if unable to create the products, tell the user
+// if unable to create the nasabah, tell the user
 else{
     echo '{';
-    echo '"message": "Pendaftaran products gagal."';
+    echo '"message": "Pendaftaran nasabah gagal."';
     echo '}';
 }
 ?>
