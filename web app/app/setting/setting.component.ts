@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InputValidatorService } from '../input-validator.service';
 
 @Component({
   selector: 'app-setting',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingComponent implements OnInit {
 
-  constructor() { }
+  passBaru: string;
+  kodeBaru: string;
+  isPassBaruValid = false;
+  isKodeBaruValid = false;
+  isPassSama = false;
+  isKodeSama = false;
+
+  constructor(private validator: InputValidatorService) { }
 
   ngOnInit() {
   }
 
+  validatePassword(): void {
+    this.isPassBaruValid = this.validator.validatePassword(this.passBaru);
+    // TODO go to API, check old pass, check pass retype
+  }
+
+  validateKode(): void {
+    this.isKodeBaruValid = this.validator.validateKode(this.kodeBaru);
+    // go to API, check old pass, check kode retype
+  }
 }
+

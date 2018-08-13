@@ -6,12 +6,15 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   isLoggedIn = false;
+  // loginToken: any;
 
   constructor() { }
 
   login(): boolean {
-    // TODO login function
-    return true;
+    // TODO login from API
+    // change return type to customer data
+    this.isLoggedIn = true;
+    return this.isLoggedIn;
   }
 
 }

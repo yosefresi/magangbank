@@ -1,7 +1,8 @@
 <div *ngIf="page === 1">
   <h2>Histori Transaksi</h2>
-  <input type="date" name="" id=""> sampai <input type="date" name="" id=""><br>
-  <input type="button" value="submit" style="float: right;" (click)="page=2"><br> <!-- ke hasil -->
+  <input type="date" [(ngModel)]="dariTanggal"> sampai <input type="date" [(ngModel)]="hinggaTanggal"><br>
+  <span style="color: red" *ngIf="!isRangeValid">Pilih rentang tanggal maksimal 30 hari yang lalu</span><br>
+  <input type="button" value="submit" style="float: right;" (click)="validateRangeTanggal()"><br> <!-- ke hasil -->
 </div>
 <div *ngIf="page === 2">
   Histori Transaksi<br>
